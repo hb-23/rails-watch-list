@@ -1,0 +1,11 @@
+<%= link_to "Watch List Home", root_path %>
+<%= link_to "New List", new_list_path %>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+
+<h1><%= @list.name %></h1>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark.movie.title %> <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,9 @@
+<%= link_to "Watch List Home", root_path %>
+<%= link_to "New List", new_list_path %>
+
+<h1>New list</h1>
+
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>

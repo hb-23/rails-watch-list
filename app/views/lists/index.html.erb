@@ -1,0 +1,10 @@
+<%= link_to "Watch List Home", root_path %>
+<%= link_to "New List", new_list_path %>
+
+<h1>Watch list</h1>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ul>

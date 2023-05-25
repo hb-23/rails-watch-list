@@ -1,0 +1,10 @@
+<%= link_to "Watch List Home", root_path %>
+<%= link_to "New List", new_list_path %>
+
+<h1>Add a movie</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit %>
+<% end %>
