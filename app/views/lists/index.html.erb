@@ -1,10 +1,16 @@
-<%= link_to "Watch List Home", root_path %>
-<%= link_to "New List", new_list_path %>
+<%= render "shared/navbar" %>
 
-<h1>Watch list</h1>
+<%= video_tag asset_path("cinema_background.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
 
-<ul>
+<div class="watch-list">
+  <h1 class="my-element">Watch List</h1>
+</div>
+
+
+<div class="list-cards">
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
+    <div class="list-card">
+      <%= link_to list.name, list_path(list) %>
+    </div>
   <% end %>
-</ul>
+</div>

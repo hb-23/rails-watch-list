@@ -1,1 +1,55 @@
 // Specific CSS for your home-page
+@import "animate.css";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
+.home_video {
+  width: 100%;
+  height: 400px;
+  object-fit: none;
+}
+
+.watch-list {
+  margin-top: -115px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid green;
+  text-align: center;
+}
+
+.my-element {
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: bounceIn;
+  animation-duration: 4s;
+}
+
+.list-cards {
+  margin-top: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px
+}
+
+.list-card {
+  font-size: 24px;
+  padding: 10px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform .2s;
+  border: 2px solid rgba(255, 255, 255, 0.891);
+}
+
+.list-card:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+}
