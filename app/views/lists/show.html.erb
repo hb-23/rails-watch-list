@@ -1,10 +1,36 @@
 <%= render "shared/navbar" %>
-<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 
-<h1><%= @list.name %></h1>
+<div class="container">
+  <h1><%= @list.name %></h1>
 
-<ul>
-  <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %> <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-  <% end %>
-</ul>
+  <div class="movie-cards">
+
+    <% @bookmarks.each do |bookmark| %>
+      <div class="movie-card">
+
+        <div class="movie-image">
+          <%= image_tag(bookmark.movie.poster_url, width: 320) %>
+        </div>
+
+        <div class="title-rating">
+          <p><%= bookmark.movie.title %></p>
+          <p><%= bookmark.movie.rating %>⭐</p>
+        </div>
+
+        <div class="comment">
+          <p id="comment">Comment</p>
+          <p>"<%= bookmark.comment.truncate(140) %>"</p>
+        </div>
+        <div class="delete-button">
+          <p><%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<%= link_to new_list_bookmark_path(@list) do %>
+  <p class="add-button"><i class="fa-solid fa-plus"></i> Add a movie</p>
+<% end %>

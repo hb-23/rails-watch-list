@@ -1,8 +1,13 @@
 <%= render "shared/navbar" %>
-<h1>Add a movie</h1>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Add a movie</h1>
+
+  <div class="form">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
