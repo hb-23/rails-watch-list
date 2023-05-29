@@ -1,4 +1,5 @@
-<%= render "shared/navbar" %>
+<%= render "shared/navbar"  %>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
 
 <div class="container">
   <h1><%= @list.name %></h1>
@@ -34,3 +35,5 @@
 <%= link_to new_list_bookmark_path(@list) do %>
   <p class="add-button"><i class="fa-solid fa-plus"></i> Add a movie</p>
 <% end %>
+
+</div>

@@ -45,25 +45,9 @@
   text-align: center;
   transition: transform .2s;
   border: 2px solid rgba(255, 255, 255, 0.891);
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');
 }
 
 .list-card:hover {
   transform: scale(1.1);
 }
-
-// .list-cards {
-//   padding: 10px;
-//   width: calc((100px + (10px * 2)) * 4); /* item width + padding on either side times number of items */
-//   display: flex;
-//   flex-wrap: wrap;
-//   background: blue;
-//   margin: 10px;
-//   justify-content: center;
-// }
-
-// .list-card {
-//   width: 100px;
-//   height: 100px;
-//   background: red;
-//   margin: 10px;
-// }

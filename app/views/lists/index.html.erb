@@ -9,8 +9,10 @@
 
 <div class="list-cards">
   <% @lists.each do |list| %>
-    <div class="list-card">
-      <%= link_to list.name, list_path(list) %>
-    </div>
+    <%= link_to list_path(list) do %>
+      <div class="list-card">
+        <%= list.name %>
+      </div>
+    <% end %>
   <% end %>
 </div>
